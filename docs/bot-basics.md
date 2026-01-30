@@ -88,7 +88,7 @@ This loop will be repeated again and again until the bot is stopped.
   * Check for trade entry signals (`enter_long` / `enter_short` columns).
   * Confirm trade entry / exits (calls `confirm_trade_entry()` and `confirm_trade_exit()` if implemented in the strategy).
   * Call `custom_entry_price()` (if implemented in the strategy) to determine entry price (Prices are moved to be within the opening candle).
-  * In Margin and Futures mode, `leverage()` strategy callback is called to determine the desired leverage.
+  * In Margin and Futures mode, `()` strategy callback is called to determine the desired leverage.
   * Determine stake size by calling the `custom_stake_amount()` callback.
   * Check position adjustments for open trades if enabled and call `adjust_trade_position()` to determine if an additional order is requested.
   * Call `order_filled()` strategy callback for filled entry orders.
@@ -103,3 +103,4 @@ This loop will be repeated again and again until the bot is stopped.
 !!! Warning "Callback call frequency"
     Backtesting will call each callback at max. once per candle (`--timeframe-detail` modifies this behavior to once per detailed candle).
     Most callbacks will be called once per iteration in live (usually every ~5s) - which can cause backtesting mismatches.
+leverage
